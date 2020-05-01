@@ -1,0 +1,52 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.2s ease;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.avatar {
+  width: 100%;
+}
+
+.titleContainer{
+  width: 30%;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 52px;
+  font-family: BungeeShade;
+  text-align: center;
+  color: #472E8B;
+}
+
+.infoContainer {
+  position: absolute;
+  transition: all 0.4s ease-in;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: burlywood;
+  z-index: 0;
+}
+
+.infoContainerVisible { 
+  right: 0;
+}
+
+.infoContainerHidden {
+   right: 100%;
+}

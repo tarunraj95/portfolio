@@ -1,0 +1,16 @@
+body {
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+@font-face {
+  font-family: 'BungeeShade';
+  src: url(./assets/fonts/BungeeShade.ttf)
+}
+
+.mainApp {
+  position: relative;
+}
