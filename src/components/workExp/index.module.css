@@ -1,7 +1,7 @@
 .container {
-  margin-top: 200vh;
+  /* margin-top: 200vh; */
   height: 100vh;
-  background-color: aquamarine;
+  background-color: #FFF;
   position: relative;
   z-index: 100;
 }

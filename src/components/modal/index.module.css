@@ -1,0 +1,16 @@
+.modalText {
+  cursor: pointer;
+  font-family: Poppins-ExtraBold;
+  font-size: 88px;
+  letter-spacing: 4.45px;
+  margin-bottom: 22px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.modalTextActive {
+  color: #FFF;
+}
+
+.modalTextActive :hover {
+  color: #FFF;
+}

@@ -1,63 +1,64 @@
 {
-    "settings": {
-        "import/resolver": {
-            "alias": []
-        }
-    },
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": [
-        "plugin:import/react",
-        "airbnb"
-    ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "parser": "babel-eslint",
-    "plugins": [
-        "react",
-        "react-hooks"
-    ],
-    "rules": {
-        "react/jsx-filename-extension": "off",
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error",
-        "react/forbid-prop-types": "off",
-        "react/require-default-props": "off",
-        "comma-dangle": "off",
-        "indent": "off",
-        "react/jsx-indent": "off",
-        "arrow-parens": "off",
-        "react/jsx-props-no-spreading": "off",
-        "react/destructuring-assignment": "off",
-        "arrow-body-style": "off",
-        "max-len": "off",
-        "react/button-has-type": "off",
-        "no-param-reassign": "off",
-        "prefer-template": "warn",
-        "jsx-a11y/no-static-element-interactions": "off",
-        "jsx-a11y/click-events-have-key-events": "off",
-        "no-underscore-dangle": "off",
-        "jsx-a11y/no-noninteractive-element-interactions": "off",
-        "import/order": "off",
-        "camelcase": "off",
-        "react/prop-types": "off",
-        "jsx-a11y/alt-text": "off",
-        "array-callback-return": "off",
-        "prefer-destructuring": "off"
+  "settings": {
+    "import/resolver": {
+      "alias": []
     }
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:import/react",
+    "airbnb"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/forbid-prop-types": "off",
+    "react/require-default-props": "off",
+    "comma-dangle": "off",
+    "indent": "off",
+    "react/jsx-indent": "off",
+    "arrow-parens": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/destructuring-assignment": "off",
+    "arrow-body-style": "off",
+    "max-len": "off",
+    "react/button-has-type": "off",
+    "no-param-reassign": "off",
+    "prefer-template": "warn",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "no-underscore-dangle": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "import/order": "off",
+    "camelcase": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/alt-text": "off",
+    "array-callback-return": "off",
+    "prefer-destructuring": "off",
+    "no-plusplus": "off"
+  }
 }
