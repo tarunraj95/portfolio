@@ -14,6 +14,31 @@
   src: url(./assets/fonts/Poppins-ExtraBold.ttf)
 }
 
+@font-face {
+  font-family: 'Poppins-ExtraLight';
+  src: url(./assets/fonts/Poppins-ExtraLight.ttf)
+}
+
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url(./assets/fonts/Poppins-Light.ttf)
+}
+
+@font-face {
+  font-family: 'Poppins-Thin';
+  src: url(./assets/fonts/Poppins-Thin.ttf)
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url(./assets/fonts/Poppins-Bold.ttf)
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  src: url(./assets/fonts/Poppins-SemiBold.ttf)
+}
+
 body {
   margin: 0px;
 }
@@ -29,6 +54,23 @@ body {
 
 :root {
   --primary-color: #472E8B;
-  --dekstop-spacing: 5vw;
+  --desktop-spacing: 5vw;
+  --section-vertical-spacing: 40px;
 }
 
+.section_container {
+  padding: var(--section-vertical-spacing) var(--desktop-spacing);
+  height: 100vh;
+  background-color: #FFF;
+  position: relative;
+  z-index: 100;
+  margin-bottom: 40px;
+}
+
+.section_heading {
+  font-family: Poppins-ExtraBold;
+  letter-spacing: 3.5px;
+  color: rgba(0, 0, 0, 0.67);
+  font-size: 70px;
+  margin-bottom: 50px;
+}

@@ -42,20 +42,12 @@
   z-index: 0;
 }
 
-.infoContainerVisible { 
-  right: 0;
-}
-
-.infoContainerHidden {
-   right: 100%;
-}
-
 .infoContentContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 50%;
-  margin-left: var(--dekstop-spacing);
+  margin-left: var(--desktop-spacing);
   height: 100%;
 }
 
@@ -65,6 +57,8 @@
   font-size: 28px;
   font-family: Poppins;
   width: 80%;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .skillText {

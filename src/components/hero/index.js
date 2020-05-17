@@ -8,10 +8,12 @@ const Hero = () => {
   const [hideHero, setHideHero] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const dynamicTextRef = useRef(null);
+  const infoTextRef = useRef(null);
   const heroRef = useRef(null);
   const infoRef = useRef(null);
   const avatarRef = useRef(null);
   const introTextRef = useRef(null);
+
 
   const scrollListener = () => {
     if (!hideHero && window.pageYOffset > window.innerHeight) {
@@ -107,6 +109,13 @@ const Hero = () => {
         right: 0,
       });
       animTimeline.add({
+        targets: infoTextRef.current,
+        opacity: 1,
+        translateY: 0,
+        easing: 'easeInOutExpo',
+        duration: 400
+      }, '-=200');
+      animTimeline.add({
         targets: introTextRef.current,
         opacity: 0,
         visibility: 'hidden',
@@ -119,6 +128,13 @@ const Hero = () => {
     } else {
       const animTimeline = anime.timeline({
         duration: 1000,
+        easing: 'easeInOutExpo'
+      });
+      animTimeline.add({
+        targets: infoTextRef.current,
+        opacity: 0,
+        translateY: 80,
+        duration: 400,
         easing: 'easeInOutExpo'
       });
       animTimeline.add({
@@ -150,7 +166,7 @@ const Hero = () => {
         </div>
         <div ref={infoRef} className={styles.infoContainer}>
           <div className={styles.infoContentContainer}>
-            <p className={styles.infoText}>
+            <p ref={infoTextRef} className={styles.infoText}>
               Javascript Application developer with experience in
               <span ref={dynamicTextRef} className={styles.skillText}>React .</span>
             </p>

@@ -4,7 +4,7 @@ import styles from './index.module.css';
 import { CSSTransition } from 'react-transition-group';
 import clsx from 'clsx';
 
-const Modal = ({ modalVisible }) => {
+const Modal = ({ modalVisible, onClose }) => {
   useEffect(() => {
     if (modalVisible) {
       document.body.style.overflow = 'hidden';
@@ -21,7 +21,7 @@ const Modal = ({ modalVisible }) => {
         classNames="overlay"
         unmountOnExit
       >
-        <div className="overlay" />
+        <div className="overlay" onClick={onClose} />
       </CSSTransition>
       <CSSTransition
         in={modalVisible}

@@ -1,5 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import App from './app';
+import { HeroScrollProvider } from './context/heroScrollContext';
 
-ReactDom.render(<App />, document.getElementById('root'));
+
+ReactDom.render(
+  <HeroScrollProvider>
+    <App />
+  </HeroScrollProvider>, document.getElementById('root')
+);
