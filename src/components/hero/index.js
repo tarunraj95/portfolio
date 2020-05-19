@@ -14,7 +14,6 @@ const Hero = () => {
   const avatarRef = useRef(null);
   const introTextRef = useRef(null);
 
-
   const scrollListener = () => {
     if (!hideHero && window.pageYOffset > window.innerHeight) {
       setHideHero(true);
@@ -28,8 +27,11 @@ const Hero = () => {
     if (window.pageYOffset < 0.25 * window.innerHeight && showInfo) {
       setShowInfo(false);
     }
+
     if (hideHero) {
-      heroRef.current.style.transform = `translateY(${-0.1 * window.pageYOffset}px)`;
+      if (window.pageYOffset > window.innerHeight) {
+        heroRef.current.style.transform = `translateY(${-0.2 * (window.pageYOffset - window.innerHeight)}px)`;
+      } else heroRef.current.style.transform = 'translateY(0px)';
     }
   };
 
