@@ -133,26 +133,26 @@ const Hero = () => {
         easing: 'easeInOutExpo'
       });
       animTimeline.add({
-        targets: infoTextRef.current,
-        opacity: 0,
-        translateY: 80,
-        duration: 400,
-        easing: 'easeInOutExpo'
-      });
-      animTimeline.add({
         targets: infoRef.current,
         right: '-100%',
       });
       animTimeline.add({
-        targets: avatarRef.current,
-        translateX: 0,
-        scale: 1
-      }, 200);
+        targets: infoTextRef.current,
+        opacity: 0,
+        translateY: 80,
+        easing: 'easeInOutExpo',
+        duration: 400
+      }, '-=1000');
       animTimeline.add({
         targets: introTextRef.current,
         opacity: 1,
-        visibility: 'visible',
-      }, 400);
+        visibility: 'hidden',
+      }, 200);
+      animTimeline.add({
+        targets: avatarRef.current,
+        translateX: 0,
+        scale: 1
+      }, 300);
     }
   }, [showInfo]);
 
