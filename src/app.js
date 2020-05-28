@@ -6,11 +6,53 @@ import React, {
 } from 'react';
 import Hero from './components/hero';
 import './global.css';
-import WorkExp from './components/workExp';
+import Timeline from './components/timeline';
 import styles from './app.module.css';
 import Hamburger from './components/hamburger';
 import Modal from './components/modal';
 import { HeroScrollContext } from './context/heroScrollContext';
+
+const WORK_TIMELINE = {
+  heading: 'WORK',
+  timelineItems: [
+    {
+      title: 'FLYNOTE',
+      duration: "Jan'19 - CURRENT",
+      body: 'Tempor ad adipisicing magna cupidatat ad commodo laboris magna consequat ipsum nostrud in laborum laborum. Dolor.'
+    },
+    {
+      title: 'Rentickle',
+      duration: "July'18 - Dec'18",
+      body: 'Nulla id temporQuis sunt labore reprehenderit occaecat sunt laborum magna aliqua eiusmod deserunt dolore sunt sunt nostrud.'
+    },
+    {
+      title: 'Couch Fashion',
+      duration: "Jan'18 - Mar'18",
+      body: 'Adipisicing reprehenderit veniam velit veniam consectetur culpa proident voluptate culpa. Amet officia proident minim sunt enim laboris sit.'
+    }
+  ]
+};
+
+const EDUCATION_TIMELINE = {
+  heading: 'EDUCATION',
+  timelineItems: [
+    {
+      title: 'Btech.',
+      duration: '2014 - 2018',
+      body: 'Tempor ad adipisicing magna cupidatat ad commodo laboris magna consequat ipsum nostrud in laborum laborum. Dolor.'
+    },
+    {
+      title: '12th',
+      duration: '2014',
+      body: 'Nulla id temporQuis sunt labore reprehenderit occaecat sunt laborum magna aliqua eiusmod deserunt dolore sunt sunt nostrud.'
+    },
+    {
+      title: '10th',
+      duration: '2012',
+      body: 'Adipisicing reprehenderit veniam velit veniam consectetur culpa proident voluptate culpa. Amet officia proident minim sunt enim laboris sit.'
+    }
+  ]
+};
 
 const App = () => {
   const [modalVisible, setmodalVisible] = useState(false);
@@ -55,7 +97,10 @@ const App = () => {
       <Hero />
       <div style={{ paddingTop: '200vh' }}>
         <div ref={secondContainer}>
-          <WorkExp />
+          <Timeline {...WORK_TIMELINE} />
+        </div>
+        <div>
+          <Timeline reverse {...EDUCATION_TIMELINE} />
         </div>
       </div>
     </div>
