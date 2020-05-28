@@ -29,7 +29,7 @@
   position: fixed;
   z-index: 1000;
   top: 0;
-  width: 66vw;
+  width: 66%;
   height: 100vh;
   transition: all 0.5s ease-in-out;
   background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
@@ -62,4 +62,16 @@
 
 .modal-exit-done {
   right: 0;
+}
+
+@media only screen and (max-width: 989px) {
+  .modal {
+    width: 80%;
+    padding: 40px;
+  }
+}
+
+
+@media only screen and (min-width: 990px) {
+  
 }

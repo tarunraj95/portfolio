@@ -3,6 +3,7 @@ import avatar from '../../assets/images/avatarIllustr.svg';
 import styles from './index.module.css';
 import { useCallbackForEvents } from '../../hooks/customHooks';
 import anime from 'animejs';
+import { getPlatform } from '../../helpers'
 
 const Hero = () => {
   const [hideHero, setHideHero] = useState(false);
@@ -122,11 +123,19 @@ const Hero = () => {
         opacity: 0,
         visibility: 'hidden',
       }, 200);
-      animTimeline.add({
-        targets: avatarRef.current,
-        translateX: window.innerWidth / 4,
-        scale: 0.70
-      }, 300);
+      if (getPlatform().desktop) {
+        animTimeline.add({
+          targets: avatarRef.current,
+          translateX: window.innerWidth / 4,
+          scale: 0.70
+        }, 300);
+      } else {
+        animTimeline.add({
+          targets: avatarRef.current,
+          translateY: -90,
+          scale: 0.70
+        }, 300);
+      }
     } else {
       const animTimeline = anime.timeline({
         duration: 1000,
@@ -151,6 +160,7 @@ const Hero = () => {
       animTimeline.add({
         targets: avatarRef.current,
         translateX: 0,
+        translateY: 0,
         scale: 1
       }, 300);
     }
@@ -166,12 +176,23 @@ const Hero = () => {
             <p className={styles.title}>I am Tarun</p>
           </div>
         </div>
-        <div ref={infoRef} className={styles.infoContainer}>
-          <div className={styles.infoContentContainer}>
-            <p ref={infoTextRef} className={styles.infoText}>
-              Javascript Application developer with experience in
-              <span ref={dynamicTextRef} className={styles.skillText}>React .</span>
+      </div>
+      <div ref={infoRef} className={styles.infoContainer}>
+        <div className={styles.infoContentContainer}>
+          <div className={styles.infoTextContainer} ref={infoTextRef}>
+            <p className={styles.infoText}>
+              Eiusmod fugiat et aliqua non amet minim.Dolore aliquip labore culpa officia.
             </p>
+            <br />
+            <p className={styles.infoText}>
+              Javascript Application developer with experience in
+              {getPlatform().desktop ? <span ref={dynamicTextRef} className={styles.skillText}>React .</span> : null}
+            </p>
+            {getPlatform().mobile ? (
+              <p className={styles.infoText}>
+                <span ref={dynamicTextRef} className={styles.skillText}>React .</span>
+              </p>
+            ) : null}
           </div>
         </div>
       </div>

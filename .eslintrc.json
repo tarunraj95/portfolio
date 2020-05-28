@@ -59,6 +59,7 @@
     "jsx-a11y/alt-text": "off",
     "array-callback-return": "off",
     "prefer-destructuring": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "eol-last": "off"
   }
 }

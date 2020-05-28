@@ -21,7 +21,6 @@
 }
 
 .titleContainer{
-  width: 36%;
   position: relative;
   z-index: 1;
 }
@@ -43,12 +42,6 @@
 }
 
 .infoContentContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 50%;
-  margin-left: var(--desktop-spacing);
-  height: 100%;
 }
 
 .infoText {
@@ -56,15 +49,16 @@
   line-height: 2em;
   font-size: 28px;
   font-family: Poppins;
-  width: 80%;
-  opacity: 0;
+}
+
+.infoTextContainer {
   transform: translateY(100px);
+  opacity: 0;
 }
 
 .skillText {
-font-size: 40px;
-font-family: Poppins-ExtraBold;
-margin-left: 20px;
+  font-size: 40px;
+  font-family: Poppins-ExtraBold;
 }
 
 .svgMenu {
@@ -87,4 +81,54 @@ margin-left: 20px;
 	50% { 
 		background-color: orange; 
 	}
+}
+
+@media only screen and (max-width: 989px) {
+  .contentContainer {
+    padding: 0px var(--mobile-spacing);
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .infoContentContainer {
+    /* justify-content: flex-end; */
+    padding: 0px 40px;
+  }
+
+  .infoText {
+    font-size: 20px;
+  }
+
+  .skillText {
+    font-size: 26px;
+  }
+
+  .infoTextContainer {
+    padding-top: 50vh;
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  .titleContainer {
+    width: 36%;
+  }
+
+  .infoContentContainer {
+    width: 50%;
+    margin-left: var(--desktop-spacing);
+  }
+
+  .infoText {
+    width: 80%;
+  }
+
+  .skillText {
+    margin-left: 10px;
+  }
+
+  .infoTextContainer {
+    padding-top: 30vh;
+  }
 }

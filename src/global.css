@@ -55,6 +55,7 @@ body {
 :root {
   --primary-color: #472E8B;
   --desktop-spacing: 5vw;
+  --mobile-spacing: 5vw;
   --section-vertical-spacing: 40px;
 }
 
