@@ -3,6 +3,10 @@
   src: url(./assets/fonts/BungeeShade.ttf)
 }
 
+@font-face {
+  font-family: 'FjallaOne';
+  src: url(./assets/fonts/FjallaOne-Regular.ttf)
+}
 
 @font-face {
   font-family: 'Poppins';
@@ -54,13 +58,18 @@ body {
 
 :root {
   --primary-color: #472E8B;
-  --desktop-spacing: 5vw;
-  --mobile-spacing: 5vw;
+  --horizontal-spacing: 5vw;
   --section-vertical-spacing: 40px;
 }
 
+@media only screen and (min-width: 990px) {
+  :root {
+    --horizontal-spacing: 5vw;
+  }
+}
+
 .section_container {
-  padding: var(--section-vertical-spacing) var(--desktop-spacing);
+  padding: var(--section-vertical-spacing) var(--horizontal-spacing);
   height: 100vh;
   background-color: #FFF;
   position: relative;
@@ -69,11 +78,12 @@ body {
 }
 
 .section_heading {
-  font-family: Poppins-ExtraBold;
+  font-family: FjallaOne;
   letter-spacing: 3.5px;
   color: rgba(0, 0, 0, 0.67);
   font-size: 70px;
   margin-bottom: 50px;
+  text-transform: uppercase;
 }
 
 

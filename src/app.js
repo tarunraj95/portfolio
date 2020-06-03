@@ -11,6 +11,8 @@ import styles from './app.module.css';
 import Hamburger from './components/hamburger';
 import Modal from './components/modal';
 import { HeroScrollContext } from './context/heroScrollContext';
+import TechStack from './components/techStack';
+import Footer from './components/footer';
 
 const WORK_TIMELINE = {
   heading: 'WORK',
@@ -102,7 +104,9 @@ const App = () => {
         <div>
           <Timeline reverse {...EDUCATION_TIMELINE} />
         </div>
+        <TechStack />
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,70 @@
+.contentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.stackSectionContainer {
+  margin-bottom: 40px;
+}
+
+.stackSectionHeading {
+  font-family: Poppins-Bold;
+  letter-spacing: 3.5px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.64);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.chip {
+  background: transparent linear-gradient(90deg, rgba(106, 17, 203, 1) 0%, rgba(37, 117, 252, 1) 100%) 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  padding: 10px 22px;
+  transform: translateY(100px);
+  transition: all 1.2s ease-in;
+}
+
+.chipTitle {
+  font: Poppins-Bold;
+  letter-spacing: 0.7px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.chipsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blob { 
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.illustrImg {
+  position: relative;
+}
+
+.chipContainer {
+  height: 40px;
+  overflow: hidden;
+  margin: 0px 14px 14px 0px;
+}
+
+.chipSlideUp {
+  transform: translateY(0px);
+}
+
+@media only screen and (max-width: 989px) {
+
+}
+
+
+@media only screen and (min-width: 990px) {
+  .stackContainer {
+    width: 40%;
+  }
+}

@@ -7,6 +7,7 @@ import officeImg1 from '../../assets/images/office1.jpg';
 import officeImg2 from '../../assets/images/office4.jpg';
 import officeImg3 from '../../assets/images/office3.jpg';
 import { getPlatform } from '../../helpers';
+import { usePrevious } from '../../hooks/customHooks';
 
 
 const Timeline = ({
@@ -14,8 +15,8 @@ const Timeline = ({
   timelineItems,
   reverse
 }) => {
-  const [animateTimeline, setAnimateTimeline] = useState(false);
   const [animationPlay, setAnimationPlay] = useState(false);
+  const prevAnimationPlay = usePrevious(animationPlay);
   const timelineBox1 = useRef(null);
   const timelineBox2 = useRef(null);
   const timelineBox3 = useRef(null);
@@ -115,8 +116,7 @@ const Timeline = ({
   };
 
   useEffect(() => {
-    if (animationPlay && !animateTimeline) {
-      setAnimateTimeline(true);
+    if (animationPlay && animationPlay !== prevAnimationPlay) {
       timelineAnimation();
       if (reverse && getPlatform().desktop) { reverseGalleryAnimation(); } else galleryAnimation();
     }
@@ -135,7 +135,7 @@ const Timeline = ({
     <div ref={timelinePageRef} style={{ display: 'flex' }} className="section_container">
       <div className={clsx([styles.contentContainer, reverse && getPlatform().desktop && styles.reverseContentContainer])}>
         <p className="section_heading">{heading}</p>
-        <div className={clsx([styles.timeline, animateTimeline ? styles.ruler : null])}>
+        <div className={clsx([styles.timeline, animationPlay ? styles.ruler : null])}>
           {timelineItems[0] ? (
             <div className={styles.timelineBoxContainer}>
               <div ref={timelineBox1} className={clsx([styles.timelineBox])}>

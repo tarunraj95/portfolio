@@ -14,6 +14,8 @@ const Hero = () => {
   const infoRef = useRef(null);
   const avatarRef = useRef(null);
   const introTextRef = useRef(null);
+  const firstNameRef = useRef(null);
+  const lastNameRef = useRef(null);
 
   const scrollListener = () => {
     if (!hideHero && window.pageYOffset > window.innerHeight) {
@@ -108,9 +110,17 @@ const Hero = () => {
         easing: 'easeInOutExpo'
       });
       animTimeline.add({
+        targets: firstNameRef.current,
+        translateX: window.innerWidth / 2 + 250
+      }, 100);
+      animTimeline.add({
+        targets: lastNameRef.current,
+        translateX: -1 * (window.innerWidth / 2) - 250
+      }, 100);
+      animTimeline.add({
         targets: infoRef.current,
         right: 0,
-      });
+      }, 200);
       animTimeline.add({
         targets: infoTextRef.current,
         opacity: 1,
@@ -121,21 +131,11 @@ const Hero = () => {
       animTimeline.add({
         targets: introTextRef.current,
         opacity: 0,
-        visibility: 'hidden',
       }, 200);
-      if (getPlatform().desktop) {
-        animTimeline.add({
-          targets: avatarRef.current,
-          translateX: window.innerWidth / 4,
-          scale: 0.70
-        }, 300);
-      } else {
-        animTimeline.add({
-          targets: avatarRef.current,
-          translateY: -90,
-          scale: 0.70
-        }, 300);
-      }
+      animTimeline.add({
+        targets: avatarRef.current,
+        opacity: 1,
+      }, 300);
     } else {
       const animTimeline = anime.timeline({
         duration: 1000,
@@ -146,6 +146,14 @@ const Hero = () => {
         right: '-100%',
       });
       animTimeline.add({
+        targets: firstNameRef.current,
+        translateX: 0
+      }, 200);
+      animTimeline.add({
+        targets: lastNameRef.current,
+        translateX: 0
+      }, 200);
+      animTimeline.add({
         targets: infoTextRef.current,
         opacity: 0,
         translateY: 80,
@@ -155,13 +163,10 @@ const Hero = () => {
       animTimeline.add({
         targets: introTextRef.current,
         opacity: 1,
-        visibility: 'hidden',
       }, 200);
       animTimeline.add({
         targets: avatarRef.current,
-        translateX: 0,
-        translateY: 0,
-        scale: 1
+        opacity: 0
       }, 300);
     }
   }, [showInfo]);
@@ -170,30 +175,29 @@ const Hero = () => {
     <div ref={heroRef} className={styles.container}>
       <div className={styles.contentContainer}>
         <div className={styles.titleContainer}>
-          <img ref={avatarRef} src={avatar} className={styles.avatar} />
           <div ref={introTextRef}>
-            <p className={styles.title}>Hi !</p>
-            <p className={styles.title}>I am Tarun</p>
+            <p className={styles.greet}>Hey I&apos;m</p>
+            <p ref={firstNameRef} className={styles.title}>Tarun</p>
+            <p ref={lastNameRef} className={styles.title}>Khanna</p>
           </div>
         </div>
       </div>
       <div ref={infoRef} className={styles.infoContainer}>
-        <div className={styles.infoContentContainer}>
-          <div className={styles.infoTextContainer} ref={infoTextRef}>
-            <p className={styles.infoText}>
-              Eiusmod fugiat et aliqua non amet minim.Dolore aliquip labore culpa officia.
-            </p>
-            <br />
-            <p className={styles.infoText}>
-              Javascript Application developer with experience in
+        <img ref={avatarRef} src={avatar} className={styles.avatar} />
+        <div className={styles.infoTextContainer} ref={infoTextRef}>
+          <p className={styles.infoText}>
+            Eiusmod fugiat et aliqua non amet minim.Dolore aliquip labore culpa officia.
+          </p>
+          <br />
+          <p className={styles.infoText}>
+            Javascript Application developer with experience in
               {getPlatform().desktop ? <span ref={dynamicTextRef} className={styles.skillText}>React .</span> : null}
+          </p>
+          {getPlatform().mobile ? (
+            <p style={{ height: 50 }} className={styles.infoText}>
+              <span ref={dynamicTextRef} className={styles.skillText}>React .</span>
             </p>
-            {getPlatform().mobile ? (
-              <p className={styles.infoText}>
-                <span ref={dynamicTextRef} className={styles.skillText}>React .</span>
-              </p>
-            ) : null}
-          </div>
+          ) : null}
         </div>
       </div>
       {/* <svg xmlns="http://www.w3.org/2000/svg" width="2.96" height="767.983" viewBox="0 0 2.96 767.983">

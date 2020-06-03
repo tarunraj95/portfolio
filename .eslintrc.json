@@ -60,6 +60,7 @@
     "array-callback-return": "off",
     "prefer-destructuring": "off",
     "no-plusplus": "off",
-    "eol-last": "off"
+    "eol-last": "off",
+    "semi": "off"
   }
 }

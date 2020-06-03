@@ -17,7 +17,7 @@
 }
 
 .avatar {
-  width: 100%;
+  width: 36%;
 }
 
 .titleContainer{
@@ -25,11 +25,19 @@
   z-index: 1;
 }
 
+.greet {
+  font-family: FjallaOne;
+  letter-spacing: 2px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.52);
+}
+
 .title {
-  font-size: 52px;
-  font-family: BungeeShade;
-  text-align: center;
+  font-size: 118px;
+  font-family: FjallaOne;
   color: var(--primary-color);
+  letter-spacing: 11.7px;
+  text-transform: uppercase;
 }
 
 .infoContainer {
@@ -39,9 +47,10 @@
   top: 0;
   background-color: var(--primary-color);
   z-index: 0;
-}
-
-.infoContentContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px var(--horizontal-spacing);
+  align-items: center;
 }
 
 .infoText {
@@ -85,16 +94,16 @@
 
 @media only screen and (max-width: 989px) {
   .contentContainer {
-    padding: 0px var(--mobile-spacing);
+    padding: 0px var(--horizontal-spacing);
   }
 
   .title {
-    font-size: 36px;
+    font-size: 70px;
+    letter-spacing: 6px;
   }
 
-  .infoContentContainer {
-    /* justify-content: flex-end; */
-    padding: 0px 40px;
+  .greet {
+    font-size: 16px;
   }
 
   .infoText {
@@ -105,19 +114,20 @@
     font-size: 26px;
   }
 
-  .infoTextContainer {
-    padding-top: 50vh;
+  .infoContainer {
+    justify-content: center;
+    flex-direction: column;
   }
+
+  .avatar {
+    width: 86%;
+  }
+
 }
 
 @media only screen and (min-width: 990px) {
   .titleContainer {
     width: 36%;
-  }
-
-  .infoContentContainer {
-    width: 50%;
-    margin-left: var(--desktop-spacing);
   }
 
   .infoText {
@@ -128,7 +138,4 @@
     margin-left: 10px;
   }
 
-  .infoTextContainer {
-    padding-top: 30vh;
-  }
 }
