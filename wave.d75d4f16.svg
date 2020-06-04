@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1366" height="242.722" viewBox="0 0 1366 242.722">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6a11cb"/>
+      <stop offset="1" stop-color="#2575fc"/>
+    </linearGradient>
+  </defs>
+  <g id="wave" transform="translate(0 71.552)">
+    <path id="startwave1_1_" d="M0,242.734H1365.9l.037-102.526s-175.169,25.48-344.5-81.876C817.555-70.882,658.381,52.9,636.062,66.966c-54.347,34.115-136.557,141.169-409,32.485C125.025,53.019,0,84.96,0,84.96Z" transform="translate(0 -71.564)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+    <path id="startwave1_2_" d="M0,256.991H1365.963L1366,209.7s-184.212,11.73-362.285-37.757c-214.417-59.575-381.778-2.489-405.288,3.972-57.176,15.728-143.59,65.108-430.1,14.986C61.044,169.509,0,178.988,0,178.988Z" transform="translate(0 -85.821)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
