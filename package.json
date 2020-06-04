@@ -42,7 +42,7 @@
     "build": "webpack --config webpack.config.js",
     "dev:start": "webpack-dev-server",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
