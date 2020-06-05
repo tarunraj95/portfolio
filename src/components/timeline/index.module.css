@@ -20,7 +20,7 @@
 }
 
 .ruler::after {
-  height: calc(100% - 220px);	
+  height: calc(100% - 200px);	
 }
 
 .contentContainer {
@@ -32,12 +32,12 @@
 }
 
 .timelineBoxContainer {
-  height: 220px;
+  height: 200px;
   position: relative;
 }
 
 .timelineBoxHeading {
-  font-size: 26px;
+  font-size: 22px;
   letter-spacing: 6.5px;
   font-family: Poppins-ExtraLight;
   text-transform: uppercase;
@@ -63,8 +63,8 @@
 }
 
 .timelineBoxDuration {
-  font-family: Poppins-SemiBold;
-  font-size: 16px;
+  font-family: Poppins-Bold;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #472e8bad;
@@ -72,14 +72,14 @@
 }
 
 .timelineBoxInfo {
-  font-size: 18px;
+  font-size: 16px;
   color: #9F9F9F;
 }
 
 .polaroidBox {
-  width: 440px;
+  width: 380px;
   border-radius: 12px;
-  height: 460px;
+  height: 400px;
   padding: 24px 24px 78px 24px;
   box-shadow: 2px 2px 14px -4px rgba(0,0,0,0.5);
   position: absolute;
@@ -108,23 +108,24 @@
   }
 
   .timelineBoxHeading {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .timelineBoxInfo {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .timelineBoxDuration {
     margin-bottom: 4px;
+    font-size: 12px;
   }
 
   .timelineBoxContainer {
-    height: 200px;
+    height: 160px;
   }
 
   .ruler::after {
-    height: calc(100% - 200px);	
+    height: calc(100% - 160px);	
   }
   
 }

@@ -4,7 +4,7 @@
   left: 0;
   height: 100vh;
   width: 100vw;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .contentContainer {
@@ -14,6 +14,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  z-index: 0;
 }
 
 .avatar {
@@ -45,12 +46,13 @@
   width: 100%;
   height: 100%;
   top: 0;
+  left: 0px;
   background-color: var(--primary-color);
-  z-index: 0;
   display: flex;
   justify-content: space-between;
   padding: 0px var(--horizontal-spacing);
   align-items: center;
+  z-index: 1;
 }
 
 .infoText {
@@ -74,6 +76,9 @@
   fill: #8ec6c5;
 }
 
+.avatar {
+  opacity: 0;
+}
 /* .cursor {
 	display: inline-block;
 	vertical-align: middle;

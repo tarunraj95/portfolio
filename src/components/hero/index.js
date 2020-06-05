@@ -6,7 +6,6 @@ import anime from 'animejs';
 import { getPlatform } from '../../helpers'
 
 const Hero = () => {
-  const [hideHero, setHideHero] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const dynamicTextRef = useRef(null);
   const infoTextRef = useRef(null);
@@ -18,27 +17,15 @@ const Hero = () => {
   const lastNameRef = useRef(null);
 
   const scrollListener = () => {
-    if (!hideHero && window.pageYOffset > window.innerHeight) {
-      setHideHero(true);
-    }
-    if (hideHero && window.pageYOffset <= 0) {
-      setHideHero(false);
-    }
     if (window.pageYOffset >= 0.25 * window.innerHeight && !showInfo) {
       setShowInfo(true);
     }
     if (window.pageYOffset < 0.25 * window.innerHeight && showInfo) {
       setShowInfo(false);
     }
-
-    if (hideHero) {
-      if (window.pageYOffset > window.innerHeight) {
-        heroRef.current.style.transform = `translateY(${-0.2 * (window.pageYOffset - window.innerHeight)}px)`;
-      } else heroRef.current.style.transform = 'translateY(0px)';
-    }
   };
 
-  const callBackScollListener = useCallbackForEvents(scrollListener, [hideHero, showInfo]);
+  const callBackScollListener = useCallbackForEvents(scrollListener, [showInfo]);
 
   // List of dynamic skill words
   const _CONTENT = [
@@ -119,7 +106,7 @@ const Hero = () => {
       }, 100);
       animTimeline.add({
         targets: infoRef.current,
-        right: 0,
+        translateX: 0,
       }, 200);
       animTimeline.add({
         targets: infoTextRef.current,
@@ -143,7 +130,7 @@ const Hero = () => {
       });
       animTimeline.add({
         targets: infoRef.current,
-        right: '-100%',
+        translateX: window.innerWidth,
       });
       animTimeline.add({
         targets: firstNameRef.current,
@@ -200,16 +187,6 @@ const Hero = () => {
           ) : null}
         </div>
       </div>
-      {/* <svg xmlns="http://www.w3.org/2000/svg" width="2.96" height="767.983" viewBox="0 0 2.96 767.983">
-        <path className={styles.menuSvg}
-          d="M4701,1115v35.266s1.818-7.411,0,72.148-1.93,51.068,0,130.362c3.5,68.37,0,21.8,0,175.74s1.863,123.816,0,200.2c0,118.434.8,44.033,0,88.186s0,66.083,0,66.083Z"
-          transform="translate(-4699.594 -1115)" />
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="1368.156" height="769.897" viewBox="0 0 1368.156 769.897">
-        <path className={styles.menuSvg}
-          d="M4701,1115H3333.478s.163,39.406,0,117.8.657,46.365,0,145.492c1.294,62.014.975,34.289,0,172.495s-.7,75.137,0,156.147c1.061,125.107,0,177.96,0,177.96L4701,1882.983Z"
-          transform="translate(-3332.844 -1115)" />
-      </svg> */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import anime from 'animejs';
 import withHeroScrollState from '../../hoc/heroScrollStateHOC';
 import officeImg1 from '../../assets/images/office1.jpg';
-import officeImg2 from '../../assets/images/office4.jpg';
+import officeImg2 from '../../assets/images/office2.jpg';
 import officeImg3 from '../../assets/images/office3.jpg';
 import { getPlatform } from '../../helpers';
 import { usePrevious } from '../../hooks/customHooks';
@@ -33,20 +33,20 @@ const Timeline = ({
     });
     animeTimeline.add({
       targets: polaroid1.current,
-      left: [-500, 200],
+      translateX: 780,
       rotate: [0, 10],
       easing: 'spring(1, 80, 50, 0)'
     });
     animeTimeline.add({
       targets: polaroid2.current,
-      left: [-500, 100],
+      translateX: 680,
       rotate: [0, -20],
       easing: 'spring(1, 80, 50, 0)'
     }, '-=500');
     animeTimeline.add({
       targets: polaroid3.current,
-      left: [-500, 180],
-      translateY: 100,
+      translateX: 660,
+      translateY: 60,
       rotate: [0, 20],
       easing: 'spring(1, 80, 50, 0)'
     }, '-=500');
@@ -58,20 +58,20 @@ const Timeline = ({
     });
     animeTimeline.add({
       targets: polaroid1.current,
-      right: [-500, 200],
+      translateX: -780,
       rotate: [0, -10],
       easing: 'spring(1, 80, 50, 0)'
     });
     animeTimeline.add({
       targets: polaroid2.current,
-      right: [-500, 100],
+      translateX: -680,
       rotate: [0, 20],
       easing: 'spring(1, 80, 50, 0)'
     }, '-=500');
     animeTimeline.add({
       targets: polaroid3.current,
-      right: [-500, 180],
-      translateY: 100,
+      translateX: -680,
+      translateY: 60,
       rotate: [0, -20],
       easing: 'spring(1, 80, 50, 0)'
     }, '-=500');
