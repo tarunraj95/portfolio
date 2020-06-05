@@ -105,8 +105,8 @@ const App = () => {
           <Timeline reverse {...EDUCATION_TIMELINE} />
         </div>
         <TechStack />
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
