@@ -97,7 +97,7 @@ const App = () => {
       <Modal modalVisible={modalVisible} onClose={() => setmodalVisible(false)} />
       <Hamburger onClick={() => setmodalVisible(!modalVisible)} />
       <Hero />
-      <div style={{ paddingTop: '200vh' }}>
+      <div style={{ paddingTop: '200vh', backgroundColor: '#fff' }}>
         <div ref={secondContainer}>
           <Timeline {...WORK_TIMELINE} />
         </div>
