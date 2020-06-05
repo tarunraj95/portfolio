@@ -6,7 +6,7 @@
 }
 
 .stackSectionContainer {
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .stackSectionHeading {
@@ -59,7 +59,17 @@
 }
 
 @media only screen and (max-width: 989px) {
+  .chip {
+    padding: 8px 16px;
+  }
 
+  .chipTitle {
+    font-size: 12px;
+  }
+
+  .chipContainer {
+    height: 34px;
+  }
 }
 
 
