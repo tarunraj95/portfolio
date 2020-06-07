@@ -33,12 +33,13 @@
   color: rgba(0, 0, 0, 0.52);
 }
 
-.title {
+.name {
   font-size: 118px;
   font-family: FjallaOne;
   color: var(--primary-color);
   letter-spacing: 11.7px;
   text-transform: uppercase;
+  transition: transform 0.35s ease-in-out;
 }
 
 .infoContainer {
@@ -53,6 +54,8 @@
   padding: 0px var(--horizontal-spacing);
   align-items: center;
   z-index: 1;
+  transition: transform 0.34s ease-in-out;
+  will-change: transform;
 }
 
 .infoText {
@@ -65,6 +68,7 @@
 .infoTextContainer {
   transform: translateY(100px);
   opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s linear;
 }
 
 .skillText {
@@ -78,6 +82,7 @@
 
 .avatar {
   opacity: 0;
+  transition: opacity 0.5s linear;
 }
 /* .cursor {
 	display: inline-block;
@@ -87,6 +92,75 @@
 	background-color: orange;
 	animation: blink .75s step-end infinite;
 } */
+
+.introTitle {
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+
+
+/* ################ animations start ################ */
+
+.introTitleFadeOut {
+  opacity: 0;
+  transition-delay: 300ms;
+}
+
+.introTitleFadeIn {
+  opacity: 1;
+  transition-delay: 200ms;
+}
+
+.firstNameSlideOut {
+  transform: translateX(calc(50vw + 250px));
+}
+
+.firstNameSlideIn {
+  transition-delay: 300ms;
+  transform: translateX(0px);
+}
+
+.lastNameSlideOut {
+  transform: translateX(calc(-50vw - 250px));
+}
+
+.lastNameSlideIn {
+  transition-delay: 300ms;
+  transform: translateX(0px);
+}
+
+.infoContainerSlideIn {
+  transform: translateX(0px);
+  transition-delay: 250ms;
+}
+
+.infoContainerSlideOut {
+  transition-delay: 50ms;
+  transform: translateX(100vw);
+}
+
+.infoTextSlideIn {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 700ms;
+}
+
+.infoTextSlideOut {
+  opacity: 0;
+}
+
+.avatarFadeIn {
+  opacity: 1;
+  transition-delay: 700ms;
+}
+
+.avatarFadeOut {
+  opacity: 0;
+}
+
+/* ################ animations end ################ */
+
+
 
 @keyframes blink {
 	from, to { 
@@ -102,7 +176,7 @@
     padding: 0px var(--horizontal-spacing);
   }
 
-  .title {
+  .name {
     font-size: 70px;
     letter-spacing: 6px;
   }

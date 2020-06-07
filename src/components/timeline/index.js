@@ -40,7 +40,6 @@ const Timeline = ({
     if (!animationPlay) return null;
     let polaroid1Styles = {
       transitionDelay: 0,
-      willChange: 'transform',
     }
     if (reverse) {
       polaroid1Styles = {
@@ -60,7 +59,6 @@ const Timeline = ({
     if (!animationPlay) return null;
     let polaroid2Styles = {
       transitionDelay: '400ms',
-      willChange: 'transform',
     }
     if (reverse) {
       polaroid2Styles = {
@@ -81,7 +79,6 @@ const Timeline = ({
     if (!animationPlay) return null;
     let polaroid3Styles = {
       transitionDelay: '800ms',
-      willChange: 'transform',
     }
     if (reverse) {
       polaroid3Styles = {
@@ -144,19 +141,19 @@ const Timeline = ({
         getPlatform().desktop ? (
           <div className={styles.galleryContainer}>
             <div
-              className={clsx([styles.polaroidBox, reverse && getPlatform().desktop && styles.reversePolaroidBox])}
+              className={clsx([styles.polaroidBox, reverse && styles.reversePolaroidBox])}
               style={getPolariod1Styles()}
             >
               <img src={officeImg1} className={styles.polaroidImg} />
             </div>
             <div
-              className={clsx([styles.polaroidBox, reverse && getPlatform().desktop && styles.reversePolaroidBox])}
+              className={clsx([styles.polaroidBox, reverse && styles.reversePolaroidBox])}
               style={getPolariod2Styles()}
             >
               <img src={officeImg2} className={styles.polaroidImg} />
             </div>
             <div
-              className={clsx([styles.polaroidBox, reverse && getPlatform().desktop && styles.reversePolaroidBox])}
+              className={clsx([styles.polaroidBox, reverse && styles.reversePolaroidBox])}
               style={getPolariod3Styles()}
             >
               <img src={officeImg3} className={styles.polaroidImg} />
