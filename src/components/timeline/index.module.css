@@ -16,7 +16,7 @@
   left: 0px;
   height: 0px;
   margin-left: -3px;
-  transition: all 0.8s linear;
+  transition: height 0.8s linear;
 }
 
 .ruler::after {
@@ -60,6 +60,25 @@
   padding: 0px 0px 40px 24px;
   height: 100%;
   opacity: 0;
+  transition: transform 0.4s linear, opacity 0.4s linear;
+  transform: translateY(100px);
+}
+
+.animateTimelineBox {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.timelineBox1 {
+  transition-delay: 0ms;
+}
+
+.timelineBox2 {
+  transition-delay: 300ms;
+}
+
+.timelineBox3 {
+  transition-delay: 600ms;
 }
 
 .timelineBoxDuration {
@@ -85,6 +104,8 @@
   position: absolute;
   right: -500px;
   background-color: #fff;
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
 }
 
 .reversePolaroidBox {
