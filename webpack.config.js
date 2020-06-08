@@ -56,7 +56,7 @@ const config = {
   plugins: [
     // new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: ['**/*', '!server.js'], }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './index.html'),
+      template: path.resolve(__dirname, './client.html'),
       hash: true
     }),
   ],
