@@ -20,7 +20,7 @@
 }
 
 .ruler::after {
-  height: calc(100% - 200px);	
+  height: calc(400px);	
 }
 
 .contentContainer {
@@ -32,12 +32,11 @@
 }
 
 .timelineBoxContainer {
-  height: 200px;
   position: relative;
 }
 
 .timelineBoxHeading {
-  font-size: 22px;
+  font-size: 21px;
   letter-spacing: 6.5px;
   font-family: Poppins-ExtraLight;
   text-transform: uppercase;
@@ -54,6 +53,7 @@
   top: 10px;
   border-radius: 50%;
   z-index: 1;
+  
 }
 
 .timelineBox {
@@ -82,7 +82,7 @@
 }
 
 .timelineBoxDuration {
-  font-family: Poppins-Bold;
+  font-family: Poppins-SemiBold;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -91,7 +91,7 @@
 }
 
 .timelineBoxInfo {
-  font-size: 16px;
+  font-size: 15px;
   color: #9F9F9F;
 }
 
@@ -103,6 +103,7 @@
   box-shadow: 2px 2px 14px -4px rgba(0,0,0,0.5);
   position: absolute;
   right: -500px;
+  top: 20%;
   background-color: #fff;
   transition: transform 0.4s ease-in-out;
   will-change: transform;
@@ -133,7 +134,18 @@
   }
 
   .timelineBoxInfo {
-    font-size: 14px;
+    font-size: 13px;
+  }
+
+  @media  screen and  (max-height: 700px)  {
+    .timelineBoxInfo {
+      font-size: 12px;
+    }
+
+    .timelineBoxHeading {
+      font-size: 16px;
+    }
+  
   }
 
   .timelineBoxDuration {
@@ -141,12 +153,9 @@
     font-size: 12px;
   }
 
-  .timelineBoxContainer {
-    height: 160px;
-  }
 
   .ruler::after {
-    height: calc(100% - 160px);	
+    height: calc(100% - 175px);	
   }
   
 }

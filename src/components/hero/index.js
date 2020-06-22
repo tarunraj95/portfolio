@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import avatar from '../../assets/images/avatarIllustr.svg';
+import avatar from '../../assets/images/profile.jpg';
 import styles from './index.module.css';
 import { useCallbackForEvents } from '../../hooks/customHooks';
-import { getPlatform } from '../../helpers'
+import { getPlatform } from '../../utilities/helpers'
 import clsx from 'clsx';
+import ScrollIndicator from '../scrollIndicator';
 
 const Hero = () => {
   const [showInfo, setShowInfo] = useState(false);
@@ -24,7 +25,8 @@ const Hero = () => {
   // List of dynamic skill words
   const _CONTENT = [
     'React .',
-    'Angular 2+ .',
+    'Javascript .',
+    'Angular .',
     'React Native .',
     'HTML/CSS .'
   ];
@@ -99,11 +101,11 @@ const Hero = () => {
         <img src={avatar} className={clsx([styles.avatar, showInfo ? styles.avatarFadeIn : styles.avatarFadeOut])} />
         <div className={clsx([styles.infoTextContainer, showInfo ? styles.infoTextSlideIn : styles.infoTextSlideOut])}>
           <p className={styles.infoText}>
-            Eiusmod fugiat et aliqua non amet minim.Dolore aliquip labore culpa officia.
+            Hi there! I am a passionate sofware developer. I love making engaging and beautiful web and mobile applications. With this passion of coding in my heart, I'm always up for learning new trending technical skills.
           </p>
           <br />
           <p className={styles.infoText}>
-            Javascript Application developer with experience in
+            I have over 2 years of professional experience working in
               {getPlatform().desktop ? <span ref={dynamicTextRef} className={styles.skillText}>React .</span> : null}
           </p>
           {getPlatform().mobile ? (
@@ -113,6 +115,7 @@ const Hero = () => {
           ) : null}
         </div>
       </div>
+      <ScrollIndicator scrollerStyles={showInfo ? { backgroundColor: '#fff' } : null} containerStyles={showInfo ? { borderColor: '#fff' } : null} />
     </div>
   );
 };

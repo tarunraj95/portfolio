@@ -25,13 +25,57 @@
 }
 
 @font-face {
+  font-family: 'Poppins-SemiBold';
+  src: url(./assets/fonts/Poppins-SemiBold.ttf)
+}
+
+@font-face {
   font-family: 'Poppins-Bold';
   src: url(./assets/fonts/Poppins-Bold.ttf)
 }
 
-
 body {
   margin: 0px;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+:focus {
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+button:focus {
+  outline: 0px;
 }
 
 * {
@@ -70,20 +114,35 @@ body {
   letter-spacing: 3.5px;
   color: rgba(0, 0, 0, 0.67);
   font-size: 70px;
-  margin-bottom: 50px;
   text-transform: uppercase;
 }
 
 
 
 @media only screen and (max-width: 989px) {
+
   .section_heading {
     font-size: 50px;
     margin-bottom: 40px;
   }
+
+  @media  screen and  (max-height: 700px)  {
+    .section_heading {
+      margin-bottom: 25px;
+    }
+   }
 }
 
 
 @media only screen and (min-width: 990px) {
+  
+  .section_heading {
+    margin-bottom: 50px;
+  }
 
+  @media  screen and  (max-width: 1366px)  {
+    .section_heading {
+      margin-bottom: 30px;
+    }
+   }
 }

@@ -27,10 +27,12 @@
   font-size: 14px;
   letter-spacing: 3.5px;
   color: rgba(0, 0, 0, 0.68);
+  cursor: pointer;
 }
 
 .socialLink:hover {
-  color: var(--primary-color)
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 

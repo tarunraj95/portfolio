@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './index.module.css';
-import { getPlatform } from '../../helpers';
+import { getPlatform } from '../../utilities/helpers';
 import anime from 'animejs';
 import webIllustr from '../../assets/images/coding2.svg'
 import clsx from 'clsx';
@@ -19,6 +19,7 @@ const STACK = {
     'NodeJs'
   ],
   tools: [
+    'Redux',
     'GTM',
     'NextJs',
     'Git',
@@ -77,10 +78,10 @@ const TechStack = () => {
       easing: 'linear',
       loop: true,
       autoplay: true,
-      duration: 7000
+      duration: 5000
     });
     const options = {
-      threshold: [0.25, 0.50, 0.75, 0.90]
+      threshold: [0.25]
     };
     observer = new IntersectionObserver(intersectionListener, options);
     observer.observe(teckStackPageRef.current);

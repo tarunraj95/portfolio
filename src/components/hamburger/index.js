@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './index.module.css';
 import clsx from 'clsx';
-import withHeroScrollState from '../../hoc/heroScrollStateHOC';
 import anime from 'animejs';
 
-const Hamburger = ({ onClick }) => {
-  const [isCross, setIsCross] = useState(false);
+const Hamburger = ({ onClick, modalOpen }) => {
   const blobRef = useRef(null);
 
   useEffect(() => {
@@ -25,7 +23,6 @@ const Hamburger = ({ onClick }) => {
   }, []);
 
   const handleClick = () => {
-    setIsCross(!isCross);
     onClick();
   };
 
@@ -36,11 +33,11 @@ const Hamburger = ({ onClick }) => {
           <path ref={blobRef} d="M127.471 13.7774C142.826 27.968 145.832 55.3827 139.862 81.212C133.893 107.08 118.95 131.363 98.4488 138.052C77.9478 144.741 51.8481 133.837 33.9818 120.536C16.0743 107.235 6.40015 91.536 2.32465 74.6774C-1.70969 57.8187 -0.145351 39.8 9.85815 26.7694C19.8205 13.7387 38.1396 5.69603 61.2341 2.1387C84.2875 -1.37997 112.075 -0.413309 127.471 13.7774Z" fill="#472E8B" />
         </svg>
 
-        <div className={clsx([styles.line, isCross && styles.crossLine1])} />
-        <div className={clsx([styles.line, isCross && styles.crossLine2])} />
+        <div className={clsx([styles.line, modalOpen && styles.crossLine1])} />
+        <div className={clsx([styles.line, modalOpen && styles.crossLine2])} />
       </div>
     </div>
   );
 };
 
-export default withHeroScrollState(Hamburger);
+export default Hamburger;

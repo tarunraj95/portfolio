@@ -1,11 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './index.module.css';
 import clsx from 'clsx';
-import withHeroScrollState from '../../hoc/heroScrollStateHOC';
-import officeImg1 from '../../assets/images/office1.jpg';
-import officeImg2 from '../../assets/images/office2.jpg';
-import officeImg3 from '../../assets/images/office3.jpg';
-import { getPlatform } from '../../helpers';
+import { getPlatform } from '../../utilities/helpers';
 
 
 const Timeline = ({
@@ -44,12 +40,12 @@ const Timeline = ({
     if (reverse) {
       polaroid1Styles = {
         ...polaroid1Styles,
-        transform: 'translateX(780px) rotate(10deg)'
+        transform: 'translateX(780px) rotate(-10deg)'
       }
     } else {
       polaroid1Styles = {
         ...polaroid1Styles,
-        transform: 'translateX(-780px) rotate(-10deg)'
+        transform: 'translateX(-780px) rotate(10deg)'
       }
     }
     return polaroid1Styles;
@@ -63,12 +59,12 @@ const Timeline = ({
     if (reverse) {
       polaroid2Styles = {
         ...polaroid2Styles,
-        transform: 'translateX(680px) rotate(-20deg)'
+        transform: 'translateX(680px) rotate(20deg)'
       }
     } else {
       polaroid2Styles = {
         ...polaroid2Styles,
-        transform: 'translateX(-680px) rotate(20deg)'
+        transform: 'translateX(-680px) rotate(-20deg)'
       }
     }
     return polaroid2Styles;
@@ -83,12 +79,12 @@ const Timeline = ({
     if (reverse) {
       polaroid3Styles = {
         ...polaroid3Styles,
-        transform: 'translate(680px, 60px) rotate(20deg)'
+        transform: 'translate(680px, 60px) rotate(-20deg)'
       }
     } else {
       polaroid3Styles = {
         ...polaroid3Styles,
-        transform: 'translate(-680px, 60px) rotate(-20deg)'
+        transform: 'translate(-680px, 60px) rotate(20deg)'
       }
     }
     return polaroid3Styles;
@@ -100,7 +96,7 @@ const Timeline = ({
         <p className="section_heading">{heading}</p>
         <div className={clsx([styles.timeline, animationPlay ? styles.ruler : null])}>
           {timelineItems[0] ? (
-            <div className={styles.timelineBoxContainer}>
+            <div className={styles.timelineBoxContainer} style={{ height: getPlatform().desktop ? timelineItems[0].height.desktop : timelineItems[0].height.mobile }}>
               <div className={clsx([styles.timelineBox, styles.timelineBox1, animationPlay && styles.animateTimelineBox])}>
                 <p className={styles.timelineBoxHeading}>{timelineItems[0].title}</p>
                 <p className={styles.timelineBoxDuration}>{timelineItems[0].duration}</p>
@@ -112,7 +108,7 @@ const Timeline = ({
           ) : null}
 
           {timelineItems[1] ? (
-            <div className={styles.timelineBoxContainer}>
+            <div className={styles.timelineBoxContainer} style={{ height: getPlatform().desktop ? timelineItems[1].height.desktop : timelineItems[1].height.mobile }}>
               <div className={clsx([styles.timelineBox, styles.timelineBox2, animationPlay && styles.animateTimelineBox])}>
                 <p className={styles.timelineBoxHeading}>{timelineItems[1].title}</p>
                 <p className={styles.timelineBoxDuration}>{timelineItems[1].duration}</p>
@@ -124,7 +120,7 @@ const Timeline = ({
           ) : null}
 
           {timelineItems[2] ? (
-            <div className={styles.timelineBoxContainer}>
+            <div className={styles.timelineBoxContainer} style={{ height: getPlatform().desktop ? timelineItems[2].height.desktop : timelineItems[2].height.mobile }}>
               <div className={clsx([styles.timelineBox, styles.timelineBox3, animationPlay && styles.animateTimelineBox])}>
                 <p className={styles.timelineBoxHeading}>{timelineItems[2].title}</p>
                 <p className={styles.timelineBoxDuration}>{timelineItems[2].duration}</p>
@@ -144,19 +140,19 @@ const Timeline = ({
               className={clsx([styles.polaroidBox, reverse && styles.reversePolaroidBox])}
               style={getPolariod1Styles()}
             >
-              <img src={officeImg1} className={styles.polaroidImg} />
+              <img src={timelineItems[0].image} className={styles.polaroidImg} />
             </div>
             <div
               className={clsx([styles.polaroidBox, reverse && styles.reversePolaroidBox])}
               style={getPolariod2Styles()}
             >
-              <img src={officeImg2} className={styles.polaroidImg} />
+              <img src={timelineItems[1].image} className={styles.polaroidImg} />
             </div>
             <div
               className={clsx([styles.polaroidBox, reverse && styles.reversePolaroidBox])}
               style={getPolariod3Styles()}
             >
-              <img src={officeImg3} className={styles.polaroidImg} />
+              <img src={timelineItems[2].image} className={styles.polaroidImg} />
             </div>
           </div>
         ) : null
@@ -165,4 +161,4 @@ const Timeline = ({
   );
 };
 
-export default withHeroScrollState(Timeline);
+export default Timeline;

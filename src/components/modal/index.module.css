@@ -1,27 +1,151 @@
 .modalText {
   cursor: pointer;
   font-family: Poppins-ExtraBold;
-  font-size: 88px;
+  font-size: 78px;
   letter-spacing: 4.45px;
   margin-bottom: 22px;
   color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s linear;
 }
 
 .modalTextActive {
   color: #FFF;
 }
 
-.modalTextActive :hover {
+.modalText:hover {
   color: #FFF;
 }
+
+.ctaSection {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.socialSection {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 22px;
+}
+
+.socialIcon {
+  margin-right: 18px;
+  height: 40px;
+  transition: transform 0.4s ease-out;
+  transform: translateY(0px);
+}
+
+
+.socialIconShadow {
+  position: absolute;
+  bottom: 0px;
+  width: 44px;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.27);
+  display: none;
+  border-radius: 50%;
+  left: 0px;
+}
+
+.resumeBtn {
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 40px;
+  position: relative;
+  padding: 6px 30px;
+  overflow: hidden;
+}
+
+.resumeBtnOverlay {
+  transform: translateY(100%);
+  transition: transform 0.25s ease-in-out;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.resumeLink {
+  font-family: Poppins-Bold;
+  font-size: 24px;
+  letter-spacing: 0.82px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.resumeIcon {
+  height: 18px;
+  margin-right: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.socialIconContainer {
+  position: relative;
+  cursor: pointer;
+}
+
+/* ################## animations start ################## */
+
+@media only screen and (min-width: 990px) {
+
+  .socialIconContainer:hover .socialIcon {
+    transform: translateY(-20px);
+  }
+
+  .socialIconContainer:hover .socialIconShadow {
+    display: inline-block;
+    animation: shadowAnimate 0.3s 1;
+  }
+
+  .resumeBtn:hover .resumeBtnOverlay {
+    transform: translateY(0%);
+  }
+
+  .resumeBtn:hover .resumeLink {
+    color: var(--primary-color)
+  }
+
+
+  @keyframes shadowAnimate {
+    0%   {transform: scaleX(0)}
+    100% {transform: scaleX(1) }
+  }
+}
+
+/* ################## animations end ################## */
+
 
 @media only screen and (max-width: 989px) {
   .modalText {
     font-size: 48px;
   }
+
+  .socialIcon {
+    height: 24px;
+    margin-right: 12px;
+  }
+
+  .socialSection {
+    margin-bottom: 12px;
+  }
+
+  .resumeBtn {
+    padding: 6px 24px;
+  }
+
+  .resumeLink {
+    font-size: 18px;
+  }
+  
+  .resumeIcon {
+    height: 14px;
+  }
 }
 
 
-@media only screen and (min-width: 990px) {
-
-}
