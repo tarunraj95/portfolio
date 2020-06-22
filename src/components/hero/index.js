@@ -101,11 +101,11 @@ const Hero = () => {
         <img src={avatar} className={clsx([styles.avatar, showInfo ? styles.avatarFadeIn : styles.avatarFadeOut])} />
         <div className={clsx([styles.infoTextContainer, showInfo ? styles.infoTextSlideIn : styles.infoTextSlideOut])}>
           <p className={styles.infoText}>
-            Hi there! I am a passionate sofware developer. I love making engaging and beautiful web and mobile applications. With this passion of coding in my heart, I'm always up for learning new trending technical skills.
+            Hi there! I am a passionate sofware developer. I love making engaging and beautiful web and mobile applications. With this passion of coding in my heart, I'm always up for learning new and trending technical skills.
           </p>
           <br />
           <p className={styles.infoText}>
-            I have over 2 years of professional experience working in
+            I have over 2 years of professional experience working with
               {getPlatform().desktop ? <span ref={dynamicTextRef} className={styles.skillText}>React .</span> : null}
           </p>
           {getPlatform().mobile ? (
