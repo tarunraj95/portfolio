@@ -6,6 +6,7 @@ import { LINKS } from '../../utilities/config'
 
 const Footer = () => {
   const onLinkClick = (url) => {
+    window.dataLayer.push({ event: 'social_click', SOCIAL_LINK: url, CTA_POSITION: 'footer' });
     window.open(url, '_blank');
   }
 

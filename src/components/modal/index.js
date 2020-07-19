@@ -24,6 +24,7 @@ const Modal = ({ modalVisible, onClose }) => {
   }, [modalVisible]);
 
   const onLinkClick = (url) => {
+    window.dataLayer.push({ event: 'social_click', SOCIAL_LINK: url, CTA_POSITION: 'modal' });
     window.open(url, '_blank')
   }
 
