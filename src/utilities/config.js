@@ -82,5 +82,5 @@ export const LINKS = {
   facebook: 'https://www.facebook.com/tarun.khanna.184',
   instagram: 'https://www.instagram.com/tarun_raj_khanna/?hl=en',
   linkedin: 'https://www.linkedin.com/in/tarunraj95/',
-  resume: 'https://drive.google.com/file/d/1WZBeV-wvKAuptzvEfvCqd54SQKfhKDqM/view'
+  resume: 'https://drive.google.com/file/d/1BoyvGzg3-jg_vpr23BzVQYy1ODpxPsJx/view'
 }
