@@ -12,7 +12,7 @@ export const WORK_TIMELINE = {
     {
       title: 'FLYNOTE',
       duration: "Jan'19 - CURRENT",
-      body: 'Building websites, internal tools, landing pages, mobile applications and developing solutions for new challenges. This period had boosted my knowledge over  ReactJs,  HTML/CSS, Angular, React Native.',
+      body: 'Building websites, internal tools, landing pages, mobile applications and developing solutions for new challenges. This period has strengthened my knowledge over ReactJs,  HTML/CSS, Angular, React Native.',
       height: {
         mobile: 175,
         desktop: 200
@@ -82,5 +82,5 @@ export const LINKS = {
   facebook: 'https://www.facebook.com/tarun.khanna.184',
   instagram: 'https://www.instagram.com/tarun_raj_khanna/?hl=en',
   linkedin: 'https://www.linkedin.com/in/tarunraj95/',
-  resume: 'https://drive.google.com/file/d/1BoyvGzg3-jg_vpr23BzVQYy1ODpxPsJx/view'
+  resume: 'https://bit.ly/2Y3hHnb'
 }
