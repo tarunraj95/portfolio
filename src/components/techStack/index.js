@@ -70,7 +70,7 @@ const TechStack = () => {
       <p className="section_heading">Tech stack</p>
       <div className={styles.contentContainer}>
         <div className={styles.stackContainer}>
-          {Object.keys(STACK).map((category) => (
+          {Object.keys(TECH_STACK).map((category) => (
             <StackSection key={category} heading={category} items={TECH_STACK[category]} playAnimation={playAnimation} />
           ))}
         </div>
