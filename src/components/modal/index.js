@@ -9,6 +9,7 @@ import insta from '../../assets/images/insta.svg';
 import linkedin from '../../assets/images/linkedin.svg';
 import download from '../../assets/images/download.svg';
 import downloadColor from '../../assets/images/downloadColor.svg';
+import email from '../../assets/images/email.svg';
 import { LINKS } from '../../utilities/config'
 
 const Modal = ({ modalVisible, onClose }) => {
@@ -93,6 +94,10 @@ const Modal = ({ modalVisible, onClose }) => {
             <div className={styles.socialSection}>
               <div onClick={() => onLinkClick(LINKS.linkedin)} className={styles.socialIconContainer}>
                 <img className={clsx([styles.socialIcon])} src={linkedin} />
+                <div className={styles.socialIconShadow} />
+              </div>
+              <div onClick={() => onLinkClick(LINKS.email)} className={styles.socialIconContainer}>
+                <img className={clsx([styles.socialIcon])} src={email} />
                 <div className={styles.socialIconShadow} />
               </div>
               <div onClick={() => onLinkClick(LINKS.instagram)} className={styles.socialIconContainer}>

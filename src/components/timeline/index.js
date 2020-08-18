@@ -10,14 +10,21 @@ const Timeline = ({
   reverse
 }) => {
   const [animationPlay, setAnimationPlay] = useState(false);
+  const [animmationEnd, setAnimmationEnd] = useState(false);
+  const [isHidden, toggleHidden] = useState(false)
   const timelinePageRef = useRef(null);
   let observer = null;
 
   const intersectionListener = (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        if (entry.intersectionRatio >= 0.5) {
+        if (entry.intersectionRatio >= 0.5 && !animationPlay) {
           setAnimationPlay(true);
+          if (!animmationEnd) {
+            setTimeout(() => {
+              setAnimmationEnd(true);
+            }, 1500);
+          }
         }
       }
     });
@@ -137,20 +144,41 @@ const Timeline = ({
         getPlatform().desktop ? (
           <div className={styles.galleryContainer}>
             <div
-              className={clsx([styles.polaroidBox, reverse && styles.reversePolaroidBox])}
+              className={clsx([
+                styles.polaroidBox,
+                reverse && styles.reversePolaroidBox,
+                isHidden && styles.hiddenBox,
+                animmationEnd && [styles.hoverBox, reverse ? styles.hoverReverseBox1 : styles.hoverBox1]
+              ])}
               style={getPolariod1Styles()}
+              onMouseEnter={() => animmationEnd && !isHidden && toggleHidden(true)}
+              onMouseLeave={() => toggleHidden && toggleHidden(false)}
             >
               <img src={timelineItems[0].image} className={styles.polaroidImg} />
             </div>
             <div
-              className={clsx([styles.polaroidBox, reverse && styles.reversePolaroidBox])}
+              className={clsx([
+                styles.polaroidBox,
+                reverse && styles.reversePolaroidBox,
+                isHidden && styles.hiddenBox,
+                animmationEnd && [styles.hoverBox, reverse ? styles.hoverReverseBox2 : styles.hoverBox2]
+              ])}
               style={getPolariod2Styles()}
+              onMouseEnter={() => animmationEnd && !isHidden && toggleHidden(true)}
+              onMouseLeave={() => toggleHidden && toggleHidden(false)}
             >
               <img src={timelineItems[1].image} className={styles.polaroidImg} />
             </div>
             <div
-              className={clsx([styles.polaroidBox, reverse && styles.reversePolaroidBox])}
+              className={clsx([
+                styles.polaroidBox,
+                reverse && styles.reversePolaroidBox,
+                isHidden && styles.hiddenBox,
+                animmationEnd && [styles.hoverBox, reverse ? styles.hoverReverseBox3 : styles.hoverBox3]
+              ])}
               style={getPolariod3Styles()}
+              onMouseEnter={() => animmationEnd && !isHidden && toggleHidden(true)}
+              onMouseLeave={() => toggleHidden && toggleHidden(false)}
             >
               <img src={timelineItems[2].image} className={styles.polaroidImg} />
             </div>

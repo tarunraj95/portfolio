@@ -82,7 +82,8 @@ export const LINKS = {
   facebook: 'https://www.facebook.com/tarun.khanna.184',
   instagram: 'https://www.instagram.com/tarun_raj_khanna/?hl=en',
   linkedin: 'https://www.linkedin.com/in/tarunraj95/',
-  resume: 'https://bit.ly/2Y3hHnb'
+  resume: 'https://bit.ly/2Y3hHnb',
+  email: 'mailto:tarunrajkhanna@gmail.com'
 }
 
 export const TECH_STACK = {

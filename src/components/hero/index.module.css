@@ -32,7 +32,9 @@
 .name {
   font-size: 118px;
   font-family: FjallaOne;
-  color: var(--primary-color);
+  background: -webkit-linear-gradient(0deg, rgba(106, 17, 203, 1) 0%, rgba(37, 117, 252, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   letter-spacing: 11.7px;
   text-transform: uppercase;
   transition: transform 0.35s ease-in-out;
@@ -84,6 +86,15 @@
 .introTitle {
   opacity: 1;
   transition: opacity 0.6s ease-in-out;
+}
+
+.designationText {
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.45);
+  position: relative;
+  top: -10px;
+  padding-left: 10px;
 }
 
 
@@ -204,6 +215,13 @@
     box-shadow: 10px 10px 0px -1px #2575fc;
   }
 
+  .designationText {
+    font-size: 14px;
+    top: -7px;
+    padding-left: 4px;
+  }
+  
+
 }
 
 @media only screen and (min-width: 990px) {
@@ -219,6 +237,10 @@
     margin-right: 80px;
     box-shadow: 14px 14px 0px -1px #2575fc;
     border-radius: 24px;
+  }
+
+  .dynamicTextWrapper {
+    height: 120px;
   }
 
   .infoTextContainer {

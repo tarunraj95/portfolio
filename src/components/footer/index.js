@@ -16,6 +16,7 @@ const Footer = () => {
         {getPlatform().desktop ? <p className={styles.copyrightText}>© 2020 - Designed and developed by Tarun Khanna</p> : null}
         <div className={styles.socialContainer}>
           <p onClick={() => onLinkClick(LINKS.linkedin)} className={styles.socialLink}>LINKEDIN</p>
+          <p onClick={() => onLinkClick(LINKS.mail)} className={styles.socialLink}>EMAIL</p>
           <p onClick={() => onLinkClick(LINKS.instagram)} className={styles.socialLink}>INSTAGRAM</p>
           <p onClick={() => onLinkClick(LINKS.facebook)} className={styles.socialLink}>FACEBOOK</p>
         </div>
