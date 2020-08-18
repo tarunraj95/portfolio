@@ -84,3 +84,27 @@ export const LINKS = {
   linkedin: 'https://www.linkedin.com/in/tarunraj95/',
   resume: 'https://bit.ly/2Y3hHnb'
 }
+
+export const TECH_STACK = {
+  languages: [
+    'Javascript',
+    'HTML',
+    'CSS',
+    'C/C++'
+  ],
+  frameworks: [
+    'React',
+    'Angular',
+    'React Native',
+    'NodeJs'
+  ],
+  tools: [
+    'Redux',
+    'GTM',
+    'NextJs',
+    'Git',
+    'Jest',
+    'MongoDb',
+    'AdobeXD'
+  ]
+}

@@ -1,33 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
+import anime from 'animejs';
+
 import styles from './index.module.css';
 import { getPlatform } from '../../utilities/helpers';
-import anime from 'animejs';
 import webIllustr from '../../assets/images/coding2.svg'
-import clsx from 'clsx';
-
-const STACK = {
-  languages: [
-    'HTML',
-    'CSS',
-    'Javascript',
-    'C/C++'
-  ],
-  frameworks: [
-    'React',
-    'Angular',
-    'React Native',
-    'NodeJs'
-  ],
-  tools: [
-    'Redux',
-    'GTM',
-    'NextJs',
-    'Git',
-    'Jest',
-    'MongoDb',
-    'AdobeXD'
-  ]
-}
+import { TECH_STACK } from '../../utilities/config';
 
 const Chip = ({ title, playAnimation }) => {
   return (
@@ -93,7 +71,7 @@ const TechStack = () => {
       <div className={styles.contentContainer}>
         <div className={styles.stackContainer}>
           {Object.keys(STACK).map((category) => (
-            <StackSection key={category} heading={category} items={STACK[category]} playAnimation={playAnimation} />
+            <StackSection key={category} heading={category} items={TECH_STACK[category]} playAnimation={playAnimation} />
           ))}
         </div>
         {getPlatform().desktop ? (
