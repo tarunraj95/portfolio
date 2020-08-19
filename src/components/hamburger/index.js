@@ -1,40 +1,38 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './index.module.css';
 import clsx from 'clsx';
-import anime from 'animejs';
+
+import { useCallbackForEvents } from '../../hooks/customHooks';
 
 const Hamburger = ({ onClick, modalOpen }) => {
-  const blobRef = useRef(null);
-
-  useEffect(() => {
-    anime({
-      targets: blobRef.current,
-      d: [
-        { value: 'M126.5 7.50003C141.855 21.6907 134.5 58 139.862 88.2121C145.225 118.424 123.501 124.811 103 131.5C82.499 138.189 56.5 137.5 33.9818 127.536C11.4636 117.572 6.40015 98.5361 2.32465 81.6774C-1.70969 64.8187 -0.145351 46.8001 9.85815 33.7694C19.8205 20.7387 38.1396 12.6961 61.2341 9.13874C84.2875 5.62008 111.104 -6.69064 126.5 7.50003Z' },
-        { value: 'M130 25.5002C145.355 39.6909 139.248 51.3615 144.61 81.5735C149.973 111.786 128.249 118.172 107.748 124.862C87.2467 131.551 61.2477 130.861 38.7295 120.898C16.2114 110.934 11.1479 91.8975 7.07236 75.0389C3.03803 58.1802 -2.89414 34.1309 4.00006 20.5002C10.8943 6.8695 33 -3 65.9819 2.50018C98.9637 8.00037 114.604 11.3095 130 25.5002Z' },
-        { value: 'M125.701 24.5002C141.056 38.6908 134.949 50.3615 140.311 80.5735C145.674 110.786 122.501 110.811 102 117.5C81.499 124.189 53.2267 137.223 28 123.861C2.77329 110.5 6.84879 90.8975 2.77329 74.0388C-1.26105 57.1802 1.80673 40.6307 8.70092 27C15.5951 13.3693 28.7009 -4.00002 61.6828 1.50016C94.6647 7.00034 110.305 10.3095 125.701 24.5002Z' },
-        { value: 'M127.471 13.7774C142.826 27.968 145.832 55.3827 139.862 81.212C133.893 107.08 118.95 131.363 98.4488 138.052C77.9478 144.741 51.8481 133.837 33.9818 120.536C16.0743 107.235 6.40015 91.536 2.32465 74.6774C-1.70969 57.8187 -0.145351 39.8 9.85815 26.7694C19.8205 13.7387 38.1396 5.69603 61.2341 2.1387C84.2875 -1.37997 112.075 -0.413309 127.471 13.7774Z' }
-      ],
-      easing: 'linear',
-      loop: true,
-      autoplay: true,
-      duration: 5000
-    });
-  }, []);
-
+  const [infoSectionVisible, setInfoSectionVisible] = useState(false);
   const handleClick = () => {
     onClick();
   };
 
+  const scrollListener = () => {
+    if (window.pageYOffset >= 0.25 * window.innerHeight && window.pageYOffset < 1.9 * window.innerHeight && !infoSectionVisible) {
+      setInfoSectionVisible(true);
+    } else if ((window.pageYOffset < 0.25 * window.innerHeight || window.pageYOffset > 1.9 * window.innerHeight) && infoSectionVisible) {
+      setInfoSectionVisible(false);
+    }
+  };
+
+  const callBackScollListener = useCallbackForEvents(scrollListener, [infoSectionVisible]);
+
+
+  useEffect(() => {
+    window.addEventListener('scroll', callBackScollListener);
+    return (() => {
+      window.removeEventListener('scroll', callBackScollListener);
+    })
+  }, []);
+
   return (
     <div className={styles.container} onClick={handleClick}>
       <div className={styles.blobContainer}>
-        <svg className={styles.blobImg} width="60" height="60" viewBox="0 0 143 141" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path ref={blobRef} d="M127.471 13.7774C142.826 27.968 145.832 55.3827 139.862 81.212C133.893 107.08 118.95 131.363 98.4488 138.052C77.9478 144.741 51.8481 133.837 33.9818 120.536C16.0743 107.235 6.40015 91.536 2.32465 74.6774C-1.70969 57.8187 -0.145351 39.8 9.85815 26.7694C19.8205 13.7387 38.1396 5.69603 61.2341 2.1387C84.2875 -1.37997 112.075 -0.413309 127.471 13.7774Z" fill="#472E8B" />
-        </svg>
-
-        <div className={clsx([styles.line, modalOpen && styles.crossLine1])} />
-        <div className={clsx([styles.line, modalOpen && styles.crossLine2])} />
+        <div className={clsx([styles.line, infoSectionVisible && styles.whiteLine, modalOpen && styles.crossLine1])} />
+        <div className={clsx([styles.line, infoSectionVisible && styles.whiteLine, !modalOpen && styles.line2, modalOpen && styles.crossLine2])} />
       </div>
     </div>
   );

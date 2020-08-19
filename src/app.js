@@ -1,5 +1,6 @@
 import React, {
   useState,
+  useEffect
 } from 'react';
 import Hero from './components/hero';
 import './global.css';
@@ -16,7 +17,21 @@ import {
 
 const App = () => {
   const [modalVisible, setmodalVisible] = useState(false);
+  const [mounted, setMounted] = useState(false)
 
+  useEffect(() => {
+    setTimeout(() => {
+      setMounted(true);
+    }, 1000);
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className={styles.loaderWrapper}>
+        <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+      </div>
+    )
+  }
   return (
     <div className={styles.mainApp}>
       <Modal modalVisible={modalVisible} onClose={() => setmodalVisible(false)} />

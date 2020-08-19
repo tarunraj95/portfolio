@@ -85,6 +85,10 @@ const Hero = () => {
     window.addEventListener('scroll', callBackScollListener);
     // Start the typing effect on load
     _INTERVAL_VAL = setInterval(Type, 100);
+
+    return (() => {
+      window.removeEventListener('scroll', callBackScollListener);
+    })
   }, []);
 
   return (
