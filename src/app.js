@@ -21,16 +21,13 @@ const App = () => {
 
   useEffect(() => {
     setTimeout(() => {
+      document.getElementById('loader_wrapper').remove();
       setMounted(true);
     }, 1000);
   }, [])
 
   if (!mounted) {
-    return (
-      <div className={styles.loaderWrapper}>
-        <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-      </div>
-    )
+    return null
   }
   return (
     <div className={styles.mainApp}>

@@ -1,9 +1,3 @@
 .mainApp {
   position: relative;
 }
-
-.loaderWrapper {
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-}
