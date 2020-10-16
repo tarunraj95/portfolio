@@ -23,7 +23,7 @@
 }
 
 .greet {
-  font-family: FjallaOne;
+  font-family: FjallaOne, sans-serif;
   letter-spacing: 2px;
   font-size: 20px;
   color: rgba(0, 0, 0, 0.52);
@@ -31,7 +31,7 @@
 
 .name {
   font-size: 118px;
-  font-family: FjallaOne;
+  font-family: FjallaOne, sans-serif;
   background: -webkit-linear-gradient(0deg, rgba(106, 17, 203, 1) 0%, rgba(37, 117, 252, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -225,9 +225,6 @@
 }
 
 @media only screen and (min-width: 990px) {
-  .titleContainer {
-    width: 36%;
-  }
 
   .skillText {
     margin-left: 10px;
