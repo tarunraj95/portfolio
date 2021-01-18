@@ -6,6 +6,7 @@ import styles from './index.module.css';
 import { useCallbackForEvents } from '../../hooks/customHooks';
 import { getPlatform } from '../../utilities/helpers'
 import ScrollIndicator from '../scrollIndicator';
+import { EXP_MONTHS, TOTAL_EXP_YEARS } from '../../utilities/config';
 
 const Hero = () => {
   const [showInfo, setShowInfo] = useState(false);
@@ -114,7 +115,7 @@ const Hero = () => {
           </p>
           <br />
           <p className={clsx([styles.infoText, styles.dynamicTextWrapper])}>
-            I have over 2 years of professional experience working with
+            I have over {TOTAL_EXP_YEARS} years {EXP_MONTHS ? `and ${EXP_MONTHS} months ` : ''}of professional experience working with
               {getPlatform().desktop ? <span ref={dynamicTextRef} className={styles.skillText}>React .</span> : null}
           </p>
           {getPlatform().mobile ? (

@@ -61,6 +61,7 @@
     "prefer-destructuring": "off",
     "no-plusplus": "off",
     "eol-last": "off",
-    "semi": "off"
+    "semi": "off",
+    "react/jsx-one-expression-per-line": "off"
   }
 }

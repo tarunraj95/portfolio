@@ -5,6 +5,13 @@ import education1 from '../assets/images/ed1.jpg';
 import education2 from '../assets/images/ed2.jpg';
 import education3 from '../assets/images/ed3.jpg';
 
+const CAREER_FIRST_DAY = new Date(2018, 6, 1);
+const TODAY = new Date();
+const TOTAL_EXP_DIFF = TODAY.getTime() - CAREER_FIRST_DAY.getTime();
+const MONTH = 1000 * 60 * 60 * 24 * 31;
+
+export const TOTAL_EXP_YEARS = Math.floor(TOTAL_EXP_DIFF / (MONTH * 12));
+export const EXP_MONTHS = Math.floor((TOTAL_EXP_DIFF % (MONTH * 12)) / (MONTH));
 
 export const WORK_TIMELINE = {
   heading: 'WORK',
