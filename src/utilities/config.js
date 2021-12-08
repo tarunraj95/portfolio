@@ -17,14 +17,24 @@ export const WORK_TIMELINE = {
   heading: 'WORK',
   timelineItems: [
     {
-      title: 'FLYNOTE',
-      duration: "Jan'19 - CURRENT",
-      body: 'Building websites, internal tools, landing pages, mobile applications and developing solutions for new challenges. This period has strengthened my knowledge over ReactJs,  HTML/CSS, Angular, React Native.',
+      title: 'Airtel Digital (Wynk)',
+      duration: "Apr'21 - CURRENT",
+      body: 'Building new screens and features powered by React Native and ReactJs on Airtel Thanks app ( Feed ).  My work here involved refactoring the existing codebase, developing optimized new solutions and dealing extensively between native frameworks ( Android / IOS) and React Native.',
       height: {
         mobile: 175,
         desktop: 200
       },
       image: officeImg1
+    },
+    {
+      title: 'FLYNOTE',
+      duration: "Jan'19 - Mar'21",
+      body: 'Built websites, internal tools, landing pages, mobile applications and developing solutions for new challenges. This period has strengthened my knowledge over ReactJs,  HTML/CSS, Angular, React Native.',
+      height: {
+        mobile: 175,
+        desktop: 200
+      },
+      image: officeImg2
     },
     {
       title: 'Rentickle',
@@ -34,18 +44,8 @@ export const WORK_TIMELINE = {
         mobile: 175,
         desktop: 200
       },
-      image: officeImg2
-    },
-    {
-      title: 'Couch Fashion',
-      duration: "Jan'18 - Mar'18",
-      body: 'In this short intern term, I worked on building prototypes of mobile application based on React Native and  alongside, writing tools to automate scraping of useful data for the company.',
-      height: {
-        mobile: 175,
-        desktop: 200
-      },
       image: officeImg3
-    }
+    },
   ]
 };
 
