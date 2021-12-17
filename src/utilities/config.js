@@ -19,7 +19,7 @@ export const WORK_TIMELINE = {
     {
       title: 'Airtel Digital (Wynk)',
       duration: "Apr'21 - CURRENT",
-      body: 'Building new screens and features powered by React Native and ReactJs on Airtel Thanks app ( Feed ).  My work here involved refactoring the existing codebase, developing optimized new solutions and dealing extensively between native frameworks ( Android / IOS) and React Native.',
+      body: 'Building new screens and features powered by React Native and ReactJs on Airtel Thanks app (Feed).  My work here involves refactoring the existing codebase, developing optimized new solutions and dealing extensively between native frameworks (Android / IOS) and React Native.',
       height: {
         mobile: 175,
         desktop: 200
