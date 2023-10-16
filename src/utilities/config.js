@@ -17,9 +17,19 @@ export const WORK_TIMELINE = {
   heading: 'WORK',
   timelineItems: [
     {
+      title: 'Razorpay',
+      duration: "Jan'22 - CURRENT",
+      body: `Actively engaged in enhancing Razorpay's Checkout user experience through daily contributions. Additionally, leading a frontend team to internationalize Razorpay's product offerings.`,
+      height: {
+        mobile: 175,
+        desktop: 200
+      },
+      image: officeImg1
+    },
+    {
       title: 'Airtel Digital (Wynk)',
-      duration: "Apr'21 - CURRENT",
-      body: 'Building new screens and features powered by React Native and ReactJs on Airtel Thanks app (Feed).  My work here involves refactoring the existing codebase, developing optimized new solutions and dealing extensively between native frameworks (Android / IOS) and React Native.',
+      duration: "Apr'21 - Jan'22",
+      body: 'Built new screens and features powered by React Native and ReactJs on Airtel Thanks app (Feed).  My work here involved refactoring the existing codebase, developing optimized new solutions and dealing extensively between native frameworks (Android / IOS) and React Native.',
       height: {
         mobile: 175,
         desktop: 200
@@ -35,16 +45,6 @@ export const WORK_TIMELINE = {
         desktop: 200
       },
       image: officeImg2
-    },
-    {
-      title: 'Rentickle',
-      duration: "July'18 - Dec'18",
-      body: 'Worked on building an internal dashboard on MEAN stack to increase the workflow efficiency of the company by providing a single tool for all departments (salesforce, support, operations and others). ',
-      height: {
-        mobile: 175,
-        desktop: 200
-      },
-      image: officeImg3
     },
   ]
 };
@@ -102,9 +102,11 @@ export const TECH_STACK = {
   ],
   frameworks: [
     'React',
+    'Svelte',
     'Angular',
     'React Native',
-    'NodeJs'
+    'NodeJs',
+    'Typescript'
   ],
   tools: [
     'Redux',

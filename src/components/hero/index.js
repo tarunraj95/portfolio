@@ -28,6 +28,7 @@ const Hero = () => {
   const _CONTENT = [
     'React .',
     'Javascript .',
+    'Svelte .',
     'Angular .',
     'React Native .',
     'HTML/CSS .'
@@ -100,7 +101,7 @@ const Hero = () => {
             <p className={styles.greet}>Hey I&apos;m</p>
             <p className={clsx([styles.name, showInfo ? styles.firstNameSlideOut : styles.firstNameSlideIn])}>Tarun</p>
             <p className={clsx([styles.name, showInfo ? styles.lastNameSlideOut : styles.lastNameSlideIn])}>Khanna</p>
-            <p className={clsx([styles.designationText])}>Software Engineer</p>
+            <p className={clsx([styles.designationText])}>A Software Engineer</p>
           </div>
         </div>
       </div>
@@ -108,10 +109,10 @@ const Hero = () => {
         <img src={avatar} className={clsx([styles.avatar, showInfo ? styles.avatarFadeIn : styles.avatarFadeOut])} />
         <div className={clsx([styles.infoTextContainer, showInfo ? styles.infoTextSlideIn : styles.infoTextSlideOut])}>
           <p className={styles.infoText}>
-            Hi there! I am a passionate software engineer.
+            Hey there, fellow digital explorer! 🚀
           </p>
           <p className={styles.infoText}>
-            I love making engaging and beautiful web and mobile applications. With this passion of coding in my heart, I'm always up for learning new and trending technical skills.
+            I'm Tarun - a frontend fanatic. I craft captivating web and mobile apps that'll make your heart race with excitement.✨
           </p>
           <br />
           <p className={clsx([styles.infoText, styles.dynamicTextWrapper])}>
